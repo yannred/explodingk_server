@@ -27,6 +27,8 @@ class Wsocket implements MessageComponentInterface
 
     public function onMessage(ConnectionInterface $conn, $msg)
     {
+
+
         echo sprintf("New message from '%s': %s\n\n\n", $conn->resourceId, $msg);
         foreach ($this->clients as $client) { // BROADCAST
             $message = json_decode($msg, true);
